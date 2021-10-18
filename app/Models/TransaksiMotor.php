@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kendaraan extends Model
+class TransaksiMotor extends Model
 {
     use HasFactory;
-    // protected $connection = 'mongodb';
+    protected $table = 'transaksi_motors';
+    protected $id = 'id';
     protected $fillable = [
-        'tahun_keluaran', 'warna', 'harga'
+        'id_kendaraan',
+        'tanggal',
+        'harga_jual'
     ];
+
 }

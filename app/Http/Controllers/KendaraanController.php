@@ -25,7 +25,7 @@ class KendaraanController extends Controller
      */
     public function index()
     {
-        return $this->user->kendaraans()->get();
+        return $this->user->kendaraan()->get();
     }
 
     /**
