@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TransaksiMotor extends Model
+class TransaksiMobil extends Model
 {
     use HasFactory;
-    protected $collection = 'transaksi_motors';
-    protected $table = 'transaksi_motors';
+
+    protected $collection = 'transaksi_mobils';
+    protected $table = 'transaksi_mobils';
     protected $id = 'id';
     protected $fillable = [
-        'id_motor',
+        'id_mobil',
         'tanggal',
         'harga_jual'
     ];
-
 }

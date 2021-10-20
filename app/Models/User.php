@@ -9,20 +9,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Laravel\Sanctum\HasApiTokens;
-// use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
+    protected $collection = 'users';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $collection= 'users';
-    protected $connection = 'mongodb';
+    // protected $collection= 'users';
     protected $fillable = [
         'name',
         'email',
@@ -56,10 +56,5 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
-    }
-
-    public function kendaraan()
-    {
-        return $this->hasMany(Kendaraan::class);
     }
 }

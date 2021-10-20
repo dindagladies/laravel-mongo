@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Kendaraan;
 
-class Motor extends Model
+class Mobil extends Model
 {
     use HasFactory;
-    protected $table = 'motors';
+    protected $collection = 'mobils';
+    protected $table = 'mobils';
     protected $id = 'id';
     protected $fillable = [
         'id',
         'nama',
         'mesin',
-        'tipe_suspensi',
-        'tipe_tranmisi',
+        'kapasitas_penumpang',
+        'tipe',
         'stock',
         'id_kendaraan'
     ];

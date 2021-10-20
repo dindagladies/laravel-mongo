@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Motor;
-use App\Repositories\MotorRepository AS Repo;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Exceptions\JWTException;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repositories\MobilRepository AS Repo;
 
-class MotorController extends Controller
+class MobilController extends Controller
 {
-
-    // List motor
+    // List Mobil
     public function index(Repo $repo)
     {
         $data = $repo->getAll();
@@ -24,7 +21,7 @@ class MotorController extends Controller
         }
     }
 
-    // Create stock motor
+    // Create stock mobil
     public function create(Repo $repo, Request $request)
     {
         $data = $repo->create($request);
@@ -32,7 +29,7 @@ class MotorController extends Controller
             // Return success response
             return response()->json([
                 'success' => true,
-                'message' => 'Motor created successfully',
+                'message' => 'Mobil created successfully',
                 'data' => $data
             ], Response::HTTP_OK);
 
@@ -43,7 +40,7 @@ class MotorController extends Controller
         }
     }
 
-    // Detail motor
+    // Detail mobil
     public function detail(Repo $repo, $id)
     {
         $data = $repo->findById($id);

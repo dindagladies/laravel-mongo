@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\TransaksiMotorRepository AS Repo;
-use App\Models\TransaksiMotor;
+use App\Repositories\TransaksiMobilRepository AS Repo;
+use App\Models\TransaksiMobil;
 use Illuminate\Http\Request;
 
-class TransaksiMotorController extends Controller
+class TransaksiMobilController extends Controller
 {
-    // Penjualan motor
+    // Penjualan mobil
     public function penjualan(Repo $repo, Request $request)
     {
         if($repo->sell($request)){

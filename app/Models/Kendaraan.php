@@ -9,7 +9,8 @@ class Kendaraan extends Model
 {
     use HasFactory;
     // protected $connection = 'mongodb';
+    protected $table = 'kendaraans';
     protected $fillable = [
-        'tahun_keluaran', 'warna', 'harga'
+        'id', 'tahun_keluaran', 'warna', 'harga'
     ];
 }

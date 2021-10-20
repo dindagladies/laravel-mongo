@@ -2,21 +2,21 @@
 
 namespace App\Repositories;
 
-use App\Models\Motor;
-use App\Models\TransaksiMotor;
+use App\Models\Mobil;
+use App\Models\TransaksiMobil;
 
-class MotorRepository
+class MobilRepository
 {
     protected $model = null;
 
-    public function __construct(Motor $model)
+    public function __construct(Mobil $model)
     {
         $this->model = $model;
     }
 
     public function getAll()
     {
-        return $this->model->kendaraan()->all();
+        return $this->model->all();
     }
 
     public function findById($id)
@@ -31,8 +31,8 @@ class MotorRepository
         $data = [
             'nama' => $request->nama,
             'mesin' => $request->mesin,
-            'tipe_suspensi' => $request->tipe_suspensi,
-            'tipe_tranmisi' => $request->tipe_tranmisi,
+            'kapasitas_penumpang' => $request->kapasitas_penumpang,
+            'tipe' => $request->tipe,
             'stock' => $request->stock,
             'id_kendaraan' => $request->id_kendaraan,
             'created_at' => date('Y-m-d H:i:s'),
@@ -41,5 +41,4 @@ class MotorRepository
         
         return $this->model->create($data);
     }
-
 }

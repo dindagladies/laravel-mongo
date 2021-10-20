@@ -19,8 +19,8 @@ class CreateMotorsTable extends Migration
             $table->string('mesin');
             $table->string('tipe_suspensi');
             $table->string('tipe_tranmisi');
-            $table->string('stock');
-            $table->string('id_kendaraan');
+            $table->integer('stock');
+            $table->integer('id_kendaraan');
             $table->timestamps();
         });
     }

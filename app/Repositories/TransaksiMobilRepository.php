@@ -2,14 +2,14 @@
 
 namespace App\Repositories;
 
-use App\Models\Motor;
-use App\Models\TransaksiMotor;
+use App\Models\Mobil;
+use App\Models\TransaksiMobil;
 
-class TransaksiMotorRepository
+class TransaksiMobilRepository
 {
     protected $model = null;
 
-    public function __construct(TransaksiMotor $model)
+    public function __construct(TransaksiMobil $model)
     {
         $this->model = $model;
     }
@@ -28,7 +28,7 @@ class TransaksiMotorRepository
     public function sell($request)
     {
         $data = [
-            'id_motor' => $request->id_motor,
+            'id_mobil' => $request->id_mobil,
             'tanggal' => $request->tanggal,
             'harga_jual' => $request->harga_jual
         ];
@@ -36,15 +36,15 @@ class TransaksiMotorRepository
         return $this->model->create($data);
 
         // pengurangan stock
-        $this->kurangi_stock($request->id_motor);
+        $this->kurangi_stock($request->id_mobil);
     }
 
     public function kurangi_stock($id)
     {
         // get stock
-        $stock = Motor::select('stock')->where('id', $id)->first();
+        $stock = Mobil::select('stock')->where('id', $id)->first();
         // update
-        $data = Motor::where('id', $id)->first();
+        $data = Mobil::where('id', $id)->first();
         $data->stock = int ($stock - 1);
         $data->save();
     }

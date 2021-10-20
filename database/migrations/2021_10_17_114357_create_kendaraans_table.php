@@ -18,13 +18,7 @@ class CreateKendaraansTable extends Migration
             $table->string('tahun_keluaran');
             $table->string('warna');
             $table->string('harga');
-            $table->unsignedInteger('user_id');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('cascade');
         });
     }
 
