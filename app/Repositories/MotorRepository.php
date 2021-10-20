@@ -16,7 +16,7 @@ class MotorRepository
 
     public function getAll()
     {
-        return $this->model->kendaraan()->all();
+        return $this->model->all();
     }
 
     public function findById($id)

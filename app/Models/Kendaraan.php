@@ -13,4 +13,14 @@ class Kendaraan extends Model
     protected $fillable = [
         'id', 'tahun_keluaran', 'warna', 'harga'
     ];
+
+    public function motor()
+    {
+        return $this->hasOne(Motor::class);
+    }
+
+    public function mobil()
+    {
+        return $this->hasOne(Mobil::class);
+    }
 }
